@@ -1,0 +1,39 @@
+﻿@page
+@model AspApp.Pages.ProbrarSearchModelModel
+@{
+    ViewData["Title"] = "Probando Get Parametros";
+}
+<div>
+    <h1 class="display-4">Datos generales del estudiante</h1>
+    <!--<form id="" method="GET" action="probarGet">-->
+    <form id="" method="post">
+        <input type="text" name="search" value="@Model.SearchText" /><br />
+        <button type="submit" name="btn_send">buscar</button>
+    </form>
+    <h2>@Model.MessageText</h2>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var oneTitle in @Model.ListaLibro)
+            {
+                <tr>
+                    <td>@oneTitle.Titleid</td>
+                    <td>@oneTitle.Name</td>
+                    <td>@oneTitle.Type</td>
+                    <td>@oneTitle.Price</td>
+                    <td>@oneTitle.Notas</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

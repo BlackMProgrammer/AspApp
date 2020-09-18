@@ -1,0 +1,16 @@
+﻿@page
+@model AspApp.Pages.Shared.loginModelModel
+@{
+    ViewData["Title"] = "Probando Formulario Post y Get";
+}
+
+<div>
+    <h1 class="display-4">Entre sus credenciales</h1>
+    <!--<form id="" method="GET" action="probarGet">-->
+    <form id="" method="post">
+        <label> Usuario </label><br>
+        <input type="text" name="userid" required/><br>
+        <button type="submit" name="btn_send">enviar</button>
+    </form>
+    <h2>@Model.MessageText</h2>
+</div>

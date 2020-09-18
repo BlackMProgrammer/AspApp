@@ -1,0 +1,44 @@
+﻿@page
+@model AspApp.Pages.UploadFileModelModel
+@{
+    ViewData["Title"] = "Probando formulario POST y Get";
+}
+<div>
+    <h1 class="display-4">subir archivos</h1>
+    <!--<form id="" method="GET" action="probarGet">-->
+    <form id="" method="post" enctype="multipart/form-data">
+        <label>elija el archivo:</label><br />
+        <input type="file" asp-for="Upload" /><br />
+        <button type="submit" name="btn_send">enviar</button>
+    </form>
+    <h2>@Model.MessageText</h2>
+
+    Universidad Autónoma de Santo Domingo
+    Facultad de Ciencias
+    COMPUCIENCIAS Programación Web
+
+    Programación Web ASP.Net MVC C# Septiembre de 2020 .
+</div>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Fecha Mod.</th>
+                <th>Tipo</th>
+                <th>Tamaño</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var oneFile in @Model.FileAtributos)
+            {
+                <tr>
+                    <td>@oneFile["name"]</td>
+                    <td>@oneFile["date"]</td>
+                    <td>@oneFile["type"]</td>
+                    <td>@oneFile["size"]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
